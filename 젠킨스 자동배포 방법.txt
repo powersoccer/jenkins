@@ -21,4 +21,5 @@ Jenkins를 이용하여 자동 빌드하는 방법은 2가지 방법이 있다.
    JENKINS_URL = jenkins url
    APP_PROJECT = jenkins에 생성된 project name
 
- - 테스트 
+ - Hook 테스트 
+   ./post-commit "/home/jenkins/repos/powersoc" "1"
