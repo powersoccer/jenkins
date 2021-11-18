@@ -1,0 +1,13 @@
+Git Hub에서 ID/PW기반의 Basic Authentication 인증을 금지하고,
+
+ID/Personal Access Token 방식의 Token Authentication 인증을 요구하고 있다.
+
+
+github 로그인 우상단 Profile > Settings > Deveoper Settings > Personal Access Tokens > Generate New Token 
+
+Note: 토큰 용도
+Select Scopes: 토큰 권한 레퍼지터리 관리 정도만 할 거라면 repo에 체크해준다.
+Generate Token
+
+
+Personal Access Token 확인 및 복사
