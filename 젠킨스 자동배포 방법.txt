@@ -1,0 +1,24 @@
+젠킨스 자동 빌드 방법
+
+
+Jenkins를 이용하여 자동 빌드하는 방법은 2가지 방법이 있다.
+
+1. poll SCM(Software Configuration Management)
+ - 특정시간 마다 소프트웨어 형상 관리툴을 호출
+ - 프로젝트 > 구성 > 빌드 유발 > poll SCM 선택
+ - 스케줄 설정 crontab 방식
+   ex) H/2 * * * *
+
+2. 소스 commit시 hook 이용
+ - Jnekins 관리 > Manage Users > 사용자 톱니바퀴 선택 >  API Token 생성
+ - 개별 Job > 구성 > 빌드유발 > 빌드를 원격으로 유발 체크 > 임의의 Auth Token을 설정한다. 해당 token으로 hook 작성
+ - repository hook 설정 (svn)
+   SVN이 설치된 서버의 프로젝트 repository\hook\post-commit 정의
+
+   USERNAME= jenkins 계정
+   API_TOKEN = 2에서 발급받은 API Token
+   AUTH_TOKEN = 2에서 설정한 임의 Auth Token
+   JENKINS_URL = jenkins url
+   APP_PROJECT = jenkins에 생성된 project name
+
+ - 테스트 
