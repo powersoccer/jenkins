@@ -11,3 +11,6 @@ Generate Token
 
 
 Personal Access Token 확인 및 복사
+
+
+git push https://powersoccer:토큰@github.com/powersoccer/jenkins.git
