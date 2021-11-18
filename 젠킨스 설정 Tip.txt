@@ -1,0 +1,12 @@
+1. 형상관리 툴에서 check out 하여 배포 서버로 소스를 가져오는 workspace를 지정하려면
+- 해당 프로젝트 > 구성 > General > 고급 > 사용자 빌드 경로 사용
+- 디렉터리 d:\jenkins\workspace\디렉터리
+
+
+2. 젠킨스에 SVN 싱크가 안 맞아서 업데이트가 안될 때 해결책
+ - 아래와 같이 나오면서 새로 추가한 파일이 배포 서버에 업데이트 되지 않는 경우
+   WARNING: clock of the subversion server appears to be out of sync. This can result in inconsistent check out behavior.
+ - 해결방법
+   시간 동기화가 정답이지만, 시간 동기화는 별도의 타임 서버가 필요하므로 가장 간단한 우회 방법으로는 svn url 뒤에 @HEAD를 붙여 줌.
+   동일하게 에러 메시지가 나오지만 revision HEAD으로 시간 관계 없이 업데이트 하기 때문에 실제 배포 서버를 보면 파일이 정상 존재한다.
+   https://SVN_URL/디렉토리@HEAD
